@@ -9,45 +9,45 @@
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
                 <li class="nav-item"> 
-                    <a href="index.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/index.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-tachometer-alt"></i>
+                    <a href="index.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/index.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item"> 
-                    <a href="antrian.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/antrian.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-user-friends"></i>
+                    <a href="antrian.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/antrian.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-user-friends"></i>
                         <p>Antrian</p>
                     </a> 
                 </li>
                 <li class="nav-item"> 
-                    <a href="pemeriksaan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/pemeriksaan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-notes-medical"></i>
+                    <a href="pemeriksaan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/pemeriksaan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-notes-medical"></i>
                         <p>Pemeriksaan</p>
                     </a> 
                 </li>
                 <li class="nav-item"> 
-                    <a href="anak.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/anak.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-baby"></i>
+                    <a href="anak.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/anak.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-baby"></i>
                         <p>Anak</p>
                     </a> 
                 </li>
                 <?php if ($dataUser['jabatan'] == 'admin'): ?>
                     <li class="nav-item"> 
-                        <a href="user.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/user.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-users"></i>
+                        <a href="user.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/user.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-users"></i>
                             <p>User</p>
                         </a> 
                     </li>
                     <li class="nav-item"> 
-                        <a href="dokter.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/dokter.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-user-md"></i>
+                        <a href="dokter.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/dokter.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-user-md"></i>
                             <p>Dokter</p>
                         </a> 
                     </li>
                 <?php endif ?>
                 <li class="nav-item"> 
-                    <a href="laporan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/laporan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-file-alt"></i>
+                    <a href="laporan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/laporan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-file-alt"></i>
                         <p>Laporan</p>
                     </a>
                 </li>
                 <hr class="sidebar-divider">
                 <li class="nav-item"> 
-                    <a href="log.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/tumbuh_kembang_anak/log.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-history"></i>
+                    <a href="log.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/log.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-history"></i>
                         <p>Log</p>
                     </a>
                 </li>
