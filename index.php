@@ -47,31 +47,10 @@
                 <div class="container-fluid"> <!-- Info boxes -->
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-3">
-                            <a href="pemeriksaan.php" class="nav-link">
-                                <div class="info-box"> <span class="info-box-icon text-bg-success shadow-sm"> <i class="fas fa-fw fa-carrot"></i> </span>
-                                    <div class="info-box-content"> <span class="info-box-text">Rekomendasi Makanan</span> 
-                                        <span class="info-box-number">
-                                            <!-- <?= $jml_pemeriksaan; ?> -->
-                                        </span> </div>
-                                </div> <!-- /.info-box -->
-                            </a>
-                        </div> <!-- /.col -->
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <a href="anak.php" class="nav-link">
-                                <div class="info-box"> <span class="info-box-icon text-bg-primary shadow-sm"> <i class="fas fa-fw fa-dumbbell"></i> </span>
-                                    <div class="info-box-content"> <span class="info-box-text">Rekomendasi Olahraga</span> 
-                                        <span class="info-box-number">
-                                            <!-- <?= $jml_anak; ?> -->
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div> 
-                        <div class="col-12 col-sm-6 col-md-3">
                             <a href="user.php" class="nav-link">
                                 <div class="info-box"> <span class="info-box-icon text-bg-warning shadow-sm"> <i class="fas fa-fw fa-users text-white"></i> </span>
                                     <div class="info-box-content"> <span class="info-box-text">Jumlah Pelanggan</span>
-                                        <!-- <span class="info-box-number"><?= $jml_user; ?></span> -->
+                                        <span class="info-box-number"><?= "0"; ?></span>
                                     </div> 
                                     <!-- /.info-box-content -->
                                 </div> <!-- /.info-box -->
@@ -79,14 +58,32 @@
                         </div> <!-- /.col -->
                         <div class="col-12 col-sm-6 col-md-3">
                             <a href="dokter.php" class="nav-link">
-                                <div class="info-box"> <span class="info-box-icon text-bg-danger shadow-sm"> <i class="fas fa-fw fa-calculator"></i> </span>
+                                <div class="info-box"> <span class="info-box-icon text-bg-danger shadow-sm"> <i class="fas fa-fw fa-child"></i> </span>
                                     <div class="info-box-content"> <span class="info-box-text">Jumlah Kategori BMI</span> 
-                                        <!-- <span class="info-box-number"><?= $jml_dokter; ?></span>  -->
+                                        <span class="info-box-number"><?= "0"; ?></span> 
                                     </div> 
                                     <!-- /.info-box-content -->
                                 </div> <!-- /.info-box -->
                             </a>
                         </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="pemeriksaan.php" class="nav-link">
+                                <div class="info-box"> <span class="info-box-icon text-bg-success shadow-sm"> <i class="fas fa-fw fa-carrot"></i> </span>
+                                    <div class="info-box-content"> <span class="info-box-text">Rekomendasi Makanan</span> 
+                                        <span class="info-box-number"><?= "0"; ?></span> 
+                                    </div>
+                                </div> <!-- /.info-box -->
+                            </a>
+                        </div> <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <a href="anak.php" class="nav-link">
+                                <div class="info-box"> <span class="info-box-icon text-bg-primary shadow-sm"> <i class="fas fa-fw fa-dumbbell"></i> </span>
+                                    <div class="info-box-content"> <span class="info-box-text">Rekomendasi Olahraga</span> 
+                                        <span class="info-box-number"><?= "0"; ?></span> 
+                                    </div>
+                                </div>
+                            </a>
+                        </div> 
                     </div> <!-- /.row --> <!--begin::Row-->
                 </div> <!--end::Container-->
             </div> <!--end::App Content-->

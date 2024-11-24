@@ -14,32 +14,30 @@
                     </a>
                 </li>
                 <li class="nav-item"> 
-                    <a href="antrian.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/antrian.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-user-friends"></i>
-                        <p>Antrian</p>
+                    <a href="berat_tinggi_badan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/berat_tinggi_badan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-calculator"></i>
+                        <p>Kalkulasi</p>
                     </a> 
                 </li>
                 <li class="nav-item"> 
-                    <a href="pemeriksaan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/pemeriksaan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-notes-medical"></i>
-                        <p>Pemeriksaan</p>
+                    <a href="pelanggan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/pelanggan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-users"></i>
+                        <p>Pelanggan</p>
                     </a> 
                 </li>
                 <li class="nav-item"> 
-                    <a href="anak.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/anak.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-baby"></i>
-                        <p>Anak</p>
+                    <a href="kategori_bmi.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/kategori_bmi.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-solid fa-child"></i>
+                        <p>Kategori BMI</p>
                     </a> 
                 </li>
-                <?php if ($dataUser['jabatan'] == 'admin'): ?>
-                    <li class="nav-item"> 
-                        <a href="user.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/user.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-users"></i>
-                            <p>User</p>
-                        </a> 
-                    </li>
-                    <li class="nav-item"> 
-                        <a href="dokter.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/dokter.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-user-md"></i>
-                            <p>Dokter</p>
-                        </a> 
-                    </li>
-                <?php endif ?>
+                <li class="nav-item"> 
+                    <a href="rekomendasi_makanan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/rekomendasi_makanan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-carrot"></i>
+                        <p>Rekomendasi Makanan</p>
+                    </a> 
+                </li>
+                <li class="nav-item"> 
+                    <a href="rekomendasi_olahraga.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/rekomendasi_olahraga.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-dumbbell"></i>
+                        <p>Rekomendasi Olahraga</p>
+                    </a> 
+                </li>
                 <li class="nav-item"> 
                     <a href="laporan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/laporan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-file-alt"></i>
                         <p>Laporan</p>
