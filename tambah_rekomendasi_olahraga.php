@@ -19,7 +19,7 @@
 </head> <!--end::Head--> <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <?php 
-        if (isset($_POST['btnTambahKategoriBmi'])) {
+        if (isset($_POST['btnTambahRekomendasiOlahraga'])) {
             $id_kategori_bmi = htmlspecialchars($_POST['id_kategori_bmi']);
             $olahraga = htmlspecialchars($_POST['olahraga']);
             $deskripsi = htmlspecialchars($_POST['deskripsi']);
@@ -173,7 +173,7 @@
                                         </div>
                                     </div> 
                                     <div class="card-footer pt-3">
-                                        <button type="submit" name="btnTambahKategoriBmi" class="btn btn-primary">Submit</button>
+                                        <button type="submit" name="btnTambahRekomendasiOlahraga" class="btn btn-primary">Submit</button>
                                     </div> 
                                 </form> <!--end::Form-->
                             </div>

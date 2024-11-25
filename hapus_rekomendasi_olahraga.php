@@ -20,7 +20,7 @@
 	$delete_rekomendasi_olahraga = mysqli_query($conn, "DELETE FROM rekomendasi_olahraga WHERE id_rekomendasi_olahraga = '$id_rekomendasi_olahraga'");
 
 	if ($delete_rekomendasi_olahraga) {
-        $log_berhasil = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Kategori BMI $olahraga berhasil dihapus!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
+        $log_berhasil = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Rekomendasi Olahraga $olahraga berhasil dihapus!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
 
         if ($foto != 'default.jpg' && $foto != '') {
 		    if (file_exists($image_path)) {
@@ -33,7 +33,7 @@
 	            Swal.fire({
 	                icon: 'success',
 	                title: 'Berhasil!',
-	                text: 'Kategori BMI " . $olahraga . " berhasil dihapus!'
+	                text: 'Rekomendasi Olahraga " . $olahraga . " berhasil dihapus!'
 	            }).then((result) => {
 	                if (result.isConfirmed) {
 	                    window.location.href = 'rekomendasi_olahraga.php';
@@ -43,14 +43,14 @@
 	    ";
 	    exit;
 	} else {
-        $log_gagal = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Kategori BMI $olahraga gagal dihapus!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
+        $log_gagal = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Rekomendasi Olahraga $olahraga gagal dihapus!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
 
 	    echo "
 	        <script>
 	            Swal.fire({
 	                icon: 'error',
 	                title: 'Gagal!',
-	                text: 'Kategori BMI " . $olahraga . " gagal dihapus!'
+	                text: 'Rekomendasi Olahraga " . $olahraga . " gagal dihapus!'
 	            }).then((result) => {
 	                if (result.isConfirmed) {
 	                    window.location.href = 'rekomendasi_olahraga.php';

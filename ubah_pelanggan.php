@@ -6,28 +6,29 @@
         exit;
     }
 
-    $kategori_bmi = mysqli_query($conn, "SELECT * FROM kategori_bmi ORDER BY bmi_min ASC");
-
+    $id_pelanggan = $_GET['id_pelanggan'];
+    $data_pelanggan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM pelanggan WHERE id_pelanggan = '$id_pelanggan'"));
 ?>
 
 <!DOCTYPE html>
 <html lang="en"> <!--begin::Head-->
 
 <head>
-    <title>Tambah Rekomendasi Makanan</title>
+    <title>Ubah Pelanggan - <?= $data_pelanggan['nama_lengkap']; ?></title>
     <?php include_once 'include/head.php'; ?>
 </head> <!--end::Head--> <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <?php 
-        if (isset($_POST['btnTambahRekomendasiMakanan'])) {
-            $id_kategori_bmi = htmlspecialchars($_POST['id_kategori_bmi']);
-            $makanan = htmlspecialchars($_POST['makanan']);
-            $deskripsi = htmlspecialchars($_POST['deskripsi']);
+        if (isset($_POST['btnUbahPelanggan'])) {
+            $nama_lengkap = htmlspecialchars($_POST['nama_lengkap']);
+            $tanggal_lahir = htmlspecialchars($_POST['tanggal_lahir']);
+            $no_telepon = htmlspecialchars($_POST['no_telepon']);
 
-            $foto = $_FILES['foto']['name'];
-            if ($foto != '') {
+            $foto = $data_pelanggan['foto'];
+            $foto_new = $_FILES['foto']['name'];
+            if ($foto_new != '') {
                 $acc_extension = array('png', 'jpg', 'jpeg', 'gif');
-                $extension = explode('.', $foto);
+                $extension = explode('.', $foto_new);
                 $extension_lower = strtolower(end($extension));
                 $size = $_FILES['foto']['size'];
                 $file_tmp = $_FILES['foto']['tmp_name'];     
@@ -69,19 +70,25 @@
                     exit;
                 }
 
-                $foto = uniqid() . '_' . time() . '_' . $foto;
-            } else {
-                $foto = 'default.jpg';
+                $image_path = 'assets/img/pelanggan/' . $foto;
+                
+                if ($foto != 'default.jpg' && $foto != '') {
+                    if (file_exists($image_path)) {
+                        unlink($image_path);
+                    }
+                }
+
+                $foto = uniqid() . '_' . time() . '_' . $foto_new;
             }
 
-            $insert_kategori_bmi = mysqli_query($conn, "INSERT INTO rekomendasi_makanan VALUES ('', '$id_kategori_bmi', '$makanan', '$deskripsi', '$foto')");
+            $update_pelanggan = mysqli_query($conn, "UPDATE pelanggan SET nama_lengkap = '$nama_lengkap', tanggal_lahir = '$tanggal_lahir', no_telepon = '$no_telepon', foto = '$foto' WHERE id_pelanggan = '$id_pelanggan'");
 
-            if ($insert_kategori_bmi) {
-                $log_berhasil = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Rekomendasi Makanan $makanan berhasil ditambahkan!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
+            if ($update_pelanggan) {
+                $log_berhasil = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Pelanggan $nama_lengkap berhasil diubah!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
 
-                if ($foto != '') {
+                if ($foto_new != '') {
                     $file_tmp = $_FILES['foto']['tmp_name'];     
-                    move_uploaded_file($file_tmp, 'assets/img/makanan/' . $foto);
+                    move_uploaded_file($file_tmp, 'assets/img/pelanggan/' . $foto);
                 }
 
                 echo "
@@ -89,23 +96,24 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Berhasil!',
-                            text: 'Rekomendasi Makanan " . $makanan . " berhasil ditambahkan!'
+                            text: 'Pelanggan " . $nama_lengkap . " berhasil diubah!'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = 'rekomendasi_makanan.php';
+                                window.location.href = 'pelanggan.php';
                             }
                         });
                     </script>
                 ";
                 exit;
             } else {
-                $log_gagal = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Rekomendasi Makanan $makanan gagal ditambahkan!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
+                $log_gagal = mysqli_query($conn, "INSERT INTO log VALUES ('', 'Pelanggan $nama_lengkap gagal diubah!', CURRENT_TIMESTAMP(), " . $dataUser['id_user'] . ")");
+
                 echo "
                     <script>
                         Swal.fire({
                             icon: 'error',
                             title: 'Gagal!',
-                            text: 'Rekomendasi Makanan " . $makanan . " gagal ditambahkan!'
+                            text: 'Pelanggan " . $nama_lengkap . " gagal diubah!'
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 window.history.back();
@@ -126,13 +134,13 @@
                 <div class="container-fluid"> <!--begin::Row-->
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3 class="mb-0"><i class="fas  fa-fw fa-plus"></i> Tambah Rekomendasi Makanan</h3>
+                            <h3 class="mb-0">Ubah Pelanggan - <?= $data_pelanggan['nama_lengkap']; ?></h3>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
-                                <li class="breadcrumb-item"><a href="rekomendasi_makanan.php">Rekomendasi Makanan</a></li>
+                                <li class="breadcrumb-item"><a href="pelanggan.php">Pelanggan</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Tambah Rekomendasi Makanan
+                                    Ubah Pelanggan
                                 </li>
                             </ol>
                         </div>
@@ -147,24 +155,19 @@
                                 <form method="post" enctype="multipart/form-data"> 
                                     <div class="card-body">
                                         <div class="mb-3"> 
-                                            <label for="id_kategori_bmi" class="form-label">Kategori BMI</label>
-                                            <select class="form-select" id="id_kategori_bmi" name="id_kategori_bmi" required>
-                                                <option value="0">--- Pilih Kategori BMI ---</option>
-                                                <?php foreach ($kategori_bmi as $dkb): ?>
-                                                    <option value="<?= $dkb['id_kategori_bmi'] ?>"><?= $dkb['kategori'] ?></option>
-                                                <?php endforeach ?>
-                                            </select>
+                                            <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?= $data_pelanggan['nama_lengkap']; ?>" required>
                                         </div>
                                         <div class="mb-3"> 
-                                            <label for="makanan" class="form-label">Makanan</label>
-                                            <textarea class="form-control" id="makanan" name="makanan" required></textarea>
+                                            <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                                            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?= $data_pelanggan['tanggal_lahir']; ?>" required>
                                         </div>
                                         <div class="mb-3"> 
-                                            <label for="deskripsi" class="form-label">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsi" name="deskripsi" required></textarea>
+                                            <label for="no_telepon" class="form-label">No. Telepon</label>
+                                            <input type="number" class="form-control" id="no_telepon" name="no_telepon" value="<?= $data_pelanggan['no_telepon']; ?>" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="foto" class="form-label">Foto Makanan</label>
+                                            <label for="foto" class="form-label">Foto</label>
                                             <div class="input-group">
                                                 <input type="file" class="form-control" id="foto" name="foto" onchange="previewImage(event)"> 
                                                 <label class="input-group-text" for="foto">Upload</label> 
@@ -172,7 +175,7 @@
                                         </div>
                                     </div> 
                                     <div class="card-footer pt-3">
-                                        <button type="submit" name="btnTambahRekomendasiMakanan" class="btn btn-primary">Submit</button>
+                                        <button type="submit" name="btnUbahPelanggan" class="btn btn-primary">Submit</button>
                                     </div> 
                                 </form> <!--end::Form-->
                             </div>
@@ -183,7 +186,7 @@
                                     <h5 class="form-label">Preview Foto</h5>
                                     <div class="row justify-content-between">
                                         <div class="col">
-                                            <img id="preview-img" class="img-fluid rounded-3" src="assets/img/profiles/default.jpg" alt="default.jpg" style="max-height: 300px;">
+                                            <img id="preview-img" class="img-fluid rounded-3" src="assets/img/pelanggan/<?= $data_pelanggan['foto']; ?>" alt="<?= $data_pelanggan['foto']; ?>">
                                         </div>
                                     </div>  
                                 </div>
