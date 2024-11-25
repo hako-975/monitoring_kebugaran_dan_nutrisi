@@ -38,11 +38,11 @@
                         <p>Rekomendasi Olahraga</p>
                     </a> 
                 </li>
-                <li class="nav-item"> 
+                <!-- <li class="nav-item"> 
                     <a href="laporan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/laporan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-file-alt"></i>
                         <p>Laporan</p>
                     </a>
-                </li>
+                </li> -->
                 <hr class="sidebar-divider">
                 <li class="nav-item"> 
                     <a href="log.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/log.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-history"></i>

@@ -6,14 +6,14 @@
         exit;
     }
 
-    $pemeriksaan = mysqli_query($conn, "SELECT *, anak.nama as nama_anak, pemeriksaan.foto as foto_anak, dokter.nama as nama_dokter FROM pemeriksaan LEFT JOIN anak ON pemeriksaan.id_anak = anak.id_anak LEFT JOIN dokter ON pemeriksaan.id_dokter = dokter.id_dokter LEFT JOIN user ON pemeriksaan.id_user = user.id_user ORDER BY tanggal_pengamatan DESC");
+    $rekomendasi_olahraga = mysqli_query($conn, "SELECT * FROM rekomendasi_olahraga INNER JOIN kategori_bmi ON rekomendasi_olahraga.id_kategori_bmi = kategori_bmi.id_kategori_bmi ORDER BY kategori_bmi.id_kategori_bmi ASC");
 ?>
 
 <!DOCTYPE html>
 <html lang="en"> <!--begin::Head-->
 
 <head>
-    <title>Pemeriksaan</title>
+    <title>Rekomendasi Olahraga</title>
     <?php include_once 'include/head.php'; ?>
 </head> <!--end::Head--> <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
@@ -26,13 +26,13 @@
                 <div class="container-fluid"> <!--begin::Row-->
                     <div class="row">
                         <div class="col-sm-6">
-                            <h3 class="mb-0"><i class="nav-icon fas fa-fw fa-notes-medical"></i> Pemeriksaan</h3>
+                            <h3 class="mb-0"><i class="nav-icon fas fa-fw fa-carrot"></i> Rekomendasi Olahraga</h3>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
                                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Pemeriksaan
+                                    Rekomendasi Olahraga
                                 </li>
                             </ol>
                         </div>
@@ -44,38 +44,30 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive p-2">
-                                <a href="tambah_pemeriksaan.php" class="mb-3 btn btn-primary"><i class="fas fa-fw fa-plus"></i> Tambah Pemeriksaan</a>
+                                <a href="tambah_rekomendasi_olahraga.php" class="mb-3 btn btn-primary"><i class="fas fa-fw fa-plus"></i> Tambah Rekomendasi Olahraga</a>
                                 <table class="table table-bordered" id="table_id">
                                     <thead class="table-dark">
                                         <tr>
                                             <th class="text-center align-middle">No.</th>
-                                            <th class="text-center align-middle">Nama Anak</th>
-                                            <th class="text-center align-middle">Nama Dokter</th>
-                                            <th class="text-center align-middle">Berat Badan</th>
-                                            <th class="text-center align-middle">Tinggi Badan</th>
-                                            <th class="text-center align-middle">Lingkar Kepala</th>
-                                            <th class="text-center align-middle">Tanggal Pengamatan</th>
-                                            <th class="text-center align-middle">Catatan</th>
-                                            <th class="text-center align-middle">Operator</th>
+                                            <th class="text-center align-middle">Kategori</th>
+                                            <th class="text-center align-middle">Olahraga</th>
+                                            <th class="text-center align-middle">Deskripsi</th>
+                                            <th class="text-center align-middle">Gambar</th>
                                             <th class="text-center align-middle">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $i = 1; ?>
-                                        <?php foreach ($pemeriksaan as $dp): ?>
+                                        <?php foreach ($rekomendasi_olahraga as $drm): ?>
                                             <tr>
                                                 <td class="text-center align-middle"><?= $i++; ?>.</td>
-                                                <td class="align-middle"><a href="detail_anak.php?id_anak=<?= $dp['id_anak']; ?>"><?= $dp['nama_anak']; ?></a></td>
-                                                <td class="align-middle"><?= $dp['nama_dokter']; ?></td>
-                                                <td class="align-middle"><?= $dp['berat_badan']; ?></td>
-                                                <td class="align-middle"><?= $dp['tinggi_badan']; ?></td>
-                                                <td class="align-middle"><?= $dp['lingkar_kepala']; ?></td>
-                                                <td class="align-middle"><?= date('d-m-Y', strtotime($dp['tanggal_pengamatan']));; ?></td>
-                                                <td class="align-middle"><?= $dp['catatan']; ?></td>
-                                                <td class="align-middle"><?= $dp['username']; ?></td>
+                                                <td class="align-middle"><?= $drm['kategori']; ?></td>
+                                                <td class="align-middle"><?= $drm['olahraga']; ?></td>
+                                                <td class="align-middle"><?= $drm['deskripsi']; ?></td>
+                                                <td class="align-middle"><img style="max-width: 200px; max-height: 200px" src="assets/img/olahraga/<?= $drm['foto']; ?>" alt="<?= $drm['foto']; ?>"></td>
                                                 <td class="text-center align-middle">
-                                                    <a href="ubah_pemeriksaan.php?id_pemeriksaan=<?= $dp['id_pemeriksaan']; ?>" class="m-1 btn btn-success"><i class="fas fa-fw fa-edit"></i> Ubah</a>
-                                                    <a href="hapus_pemeriksaan.php?id_pemeriksaan=<?= $dp['id_pemeriksaan']; ?>" data-nama="<?= $dp['nama_anak']; ?>" class="m-1 btn btn-danger btn-delete"><i class="fas fa-fw fa-trash"></i> Hapus</a>
+                                                    <a href="ubah_rekomendasi_olahraga.php?id_rekomendasi_olahraga=<?= $drm['id_rekomendasi_olahraga']; ?>" class="m-1 btn btn-success"><i class="fas fa-fw fa-edit"></i> Ubah</a>
+                                                    <a href="hapus_rekomendasi_olahraga.php?id_rekomendasi_olahraga=<?= $drm['id_rekomendasi_olahraga']; ?>" data-nama="<?= $drm['kategori']; ?>" class="m-1 btn btn-danger btn-delete"><i class="fas fa-fw fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>

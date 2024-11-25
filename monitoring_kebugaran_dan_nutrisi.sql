@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Nov 2024 pada 05.20
+-- Waktu pembuatan: 25 Nov 2024 pada 09.22
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -87,7 +87,51 @@ INSERT INTO `log` (`id_log`, `isi_log`, `tgl_log`, `id_user`) VALUES
 (85, 'Kategori BMI obes123 berhasil dihapus!', '2024-11-24 04:19:11', 1),
 (86, 'Kategori BMI  berhasil dihapus!', '2024-11-24 04:20:34', 1),
 (87, 'Kategori BMI obes berhasil ditambahkan!', '2024-11-24 04:20:41', 1),
-(88, 'Kategori BMI obes berhasil dihapus!', '2024-11-24 04:20:44', 1);
+(88, 'Kategori BMI obes berhasil dihapus!', '2024-11-24 04:20:44', 1),
+(89, 'User admin berhasil logout!', '2024-11-24 04:21:50', 1),
+(90, 'User admin berhasil login!', '2024-11-24 10:55:35', 1),
+(91, 'Rekomendasi Makanan  berhasil ditambahkan!', '2024-11-24 11:34:20', 1),
+(92, 'Kategori BMI  berhasil dihapus!', '2024-11-24 11:34:27', 1),
+(93, 'Rekomendasi Makanan asd berhasil ditambahkan!', '2024-11-24 11:36:06', 1),
+(94, 'Kategori BMI 4 berhasil dihapus!', '2024-11-24 11:36:15', 1),
+(95, 'Rekomendasi Makanan asd berhasil ditambahkan!', '2024-11-24 11:36:34', 1),
+(96, 'Kategori BMI asd berhasil dihapus!', '2024-11-24 11:37:58', 1),
+(97, 'User admin berhasil logout!', '2024-11-24 11:39:03', 1),
+(98, 'User admin berhasil login!', '2024-11-24 11:39:08', 1),
+(99, 'User admin berhasil login!', '2024-11-25 07:47:20', 1),
+(100, 'Rekomendasi Makanan asd berhasil ditambahkan!', '2024-11-25 07:47:32', 1),
+(101, 'Rekomendasi Makanan asd123 gagal diubah!', '2024-11-25 07:47:37', 1),
+(102, 'Rekomendasi Makanan asd123 berhasil diubah!', '2024-11-25 07:49:10', 1),
+(103, 'Rekomendasi Makanan asd123 berhasil diubah!', '2024-11-25 07:50:41', 1),
+(104, 'Rekomendasi Makanan asd berhasil ditambahkan!', '2024-11-25 07:50:47', 1),
+(105, 'Rekomendasi Makanan asd123 berhasil diubah!', '2024-11-25 07:50:51', 1),
+(106, 'Kategori BMI asd123 berhasil dihapus!', '2024-11-25 07:50:54', 1),
+(107, 'Rekomendasi Olahraga asd berhasil ditambahkan!', '2024-11-25 07:53:32', 1),
+(108, 'Rekomendasi Olahraga asd123 berhasil diubah!', '2024-11-25 07:54:15', 1),
+(109, 'Kategori BMI asd123 berhasil dihapus!', '2024-11-25 07:54:44', 1),
+(110, 'Rekomendasi Makanan Daging berhasil ditambahkan!', '2024-11-25 08:00:12', 1),
+(111, 'Kategori BMI Daging berhasil dihapus!', '2024-11-25 08:07:08', 1),
+(112, 'Rekomendasi Makanan daging berhasil ditambahkan!', '2024-11-25 08:07:33', 1),
+(113, 'Rekomendasi Makanan daging berhasil diubah!', '2024-11-25 08:07:52', 1),
+(114, 'Kategori BMI daging berhasil dihapus!', '2024-11-25 08:08:32', 1),
+(115, 'Rekomendasi Makanan asd berhasil ditambahkan!', '2024-11-25 08:08:41', 1),
+(116, 'Rekomendasi Makanan asd berhasil diubah!', '2024-11-25 08:08:46', 1),
+(117, 'Kategori BMI asd berhasil dihapus!', '2024-11-25 08:10:54', 1),
+(118, 'Rekomendasi Makanan asd berhasil ditambahkan!', '2024-11-25 08:11:00', 1),
+(119, 'Rekomendasi Makanan asdasd berhasil diubah!', '2024-11-25 08:11:07', 1),
+(120, 'Rekomendasi Makanan asdasd berhasil diubah!', '2024-11-25 08:11:12', 1),
+(121, 'Kategori BMI asdasd berhasil dihapus!', '2024-11-25 08:11:20', 1),
+(122, 'Rekomendasi Olahraga asd gagal ditambahkan!', '2024-11-25 08:14:09', 1),
+(123, 'Rekomendasi Olahraga asd gagal ditambahkan!', '2024-11-25 08:14:17', 1),
+(124, 'Rekomendasi Olahraga asd berhasil ditambahkan!', '2024-11-25 08:14:45', 1),
+(125, 'Rekomendasi Olahraga asd114 berhasil diubah!', '2024-11-25 08:16:14', 1),
+(126, 'Kategori BMI asd114 berhasil dihapus!', '2024-11-25 08:16:22', 1),
+(127, 'Rekomendasi Makanan Nasi, Ayam, dan Sayuran berhasil diubah!', '2024-11-25 08:18:07', 1),
+(128, 'Rekomendasi Makanan lele berhasil ditambahkan!', '2024-11-25 08:20:48', 1),
+(129, 'Kategori BMI lele berhasil dihapus!', '2024-11-25 08:20:58', 1),
+(130, 'Rekomendasi Olahraga lari berhasil ditambahkan!', '2024-11-25 08:21:11', 1),
+(131, 'Kategori BMI lari berhasil dihapus!', '2024-11-25 08:21:44', 1),
+(132, 'Rekomendasi Olahraga Lari, Bersepeda, dan Senam Aerobik berhasil diubah!', '2024-11-25 08:22:03', 1);
 
 -- --------------------------------------------------------
 
@@ -112,22 +156,24 @@ CREATE TABLE `rekomendasi_makanan` (
   `id_rekomendasi_makanan` int(11) NOT NULL,
   `id_kategori_bmi` int(11) NOT NULL,
   `makanan` varchar(255) NOT NULL,
-  `deskripsi` text DEFAULT NULL
+  `deskripsi` text DEFAULT NULL,
+  `foto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `rekomendasi_makanan`
 --
 
-INSERT INTO `rekomendasi_makanan` (`id_rekomendasi_makanan`, `id_kategori_bmi`, `makanan`, `deskripsi`) VALUES
-(1, 1, 'Nasi, Ayam, dan Sayuran', 'Makanan tinggi kalori dan protein untuk menambah berat badan.'),
-(2, 2, 'Kentang Rebus dan Telur', 'Kaya protein dan karbohidrat kompleks untuk memperbaiki berat badan.'),
-(3, 3, 'Roti Gandum dan Susu', 'Cocok untuk menambah berat badan ringan dengan asupan nutrisi seimbang.'),
-(4, 4, 'Buah-buahan, Sayuran, dan Ikan', 'Pola makan sehat untuk mempertahankan berat badan normal.'),
-(5, 5, 'Salad Sayur dan Protein Rendah Lemak', 'Mengontrol berat badan dengan asupan kalori moderat.'),
-(6, 6, 'Oatmeal dan Ikan Panggang', 'Mengurangi asupan kalori dengan tetap memenuhi kebutuhan nutrisi.'),
-(7, 7, 'Sup Sayur Tanpa Minyak', 'Rendah kalori untuk menurunkan berat badan lebih efektif.'),
-(8, 8, 'Sayuran Kukus dan Protein Nabati', 'Makanan sangat rendah kalori untuk kategori obesitas berat.');
+INSERT INTO `rekomendasi_makanan` (`id_rekomendasi_makanan`, `id_kategori_bmi`, `makanan`, `deskripsi`, `foto`) VALUES
+(1, 1, 'Nasi, Ayam, dan Sayuran', 'Makanan tinggi kalori dan protein untuk menambah berat badan.', '674432bfa9057_1732522687_download (1).jpeg'),
+(2, 2, 'Kentang Rebus dan Telur', 'Kaya protein dan karbohidrat kompleks untuk memperbaiki berat badan.', ''),
+(3, 3, 'Roti Gandum dan Susu', 'Cocok untuk menambah berat badan ringan dengan asupan nutrisi seimbang.', ''),
+(4, 4, 'Buah-buahan, Sayuran, dan Ikan', 'Pola makan sehat untuk mempertahankan berat badan normal.', ''),
+(5, 5, 'Salad Sayur dan Protein Rendah Lemak', 'Mengontrol berat badan dengan asupan kalori moderat.', ''),
+(6, 6, 'Oatmeal dan Ikan Panggang', 'Mengurangi asupan kalori dengan tetap memenuhi kebutuhan nutrisi.', ''),
+(7, 7, 'Sup Sayur Tanpa Minyak', 'Rendah kalori untuk menurunkan berat badan lebih efektif.', ''),
+(8, 8, 'Sayuran Kukus dan Protein Nabati', 'Makanan sangat rendah kalori untuk kategori obesitas berat.', ''),
+(10, 0, 'asd123', 'asd123', '');
 
 -- --------------------------------------------------------
 
@@ -139,22 +185,23 @@ CREATE TABLE `rekomendasi_olahraga` (
   `id_rekomendasi_olahraga` int(11) NOT NULL,
   `id_kategori_bmi` int(11) NOT NULL,
   `olahraga` varchar(255) NOT NULL,
-  `deskripsi` text DEFAULT NULL
+  `deskripsi` text DEFAULT NULL,
+  `foto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `rekomendasi_olahraga`
 --
 
-INSERT INTO `rekomendasi_olahraga` (`id_rekomendasi_olahraga`, `id_kategori_bmi`, `olahraga`, `deskripsi`) VALUES
-(1, 1, 'Latihan Kekuatan (Strength Training)', 'Olahraga untuk menambah massa otot dan berat badan.'),
-(2, 2, 'Jogging Ringan dan Latihan Kekuatan', 'Meningkatkan nafsu makan dan memperbaiki berat badan dengan olahraga teratur.'),
-(3, 3, 'Lari, Sepeda, dan Yoga', 'Aktivitas yang membantu menambah berat badan ringan dan meningkatkan kebugaran tubuh.'),
-(4, 4, 'Lari, Bersepeda, dan Senam Aerobik', 'Olahraga dengan intensitas sedang untuk menjaga berat badan tetap normal.'),
-(5, 5, 'Berenang, Jalan Cepat', 'Olahraga yang membakar kalori tanpa meningkatkan massa otot secara berlebihan.'),
-(6, 6, 'Yoga dan Pilates', 'Mengurangi stres dan menjaga keseimbangan tubuh dengan aktivitas yang lebih rendah kalori.'),
-(7, 7, 'Senam Aerobik dan Lari Ringan', 'Membantu mengurangi berat badan dengan aktivitas intensitas tinggi.'),
-(8, 8, 'Latihan Kardio Berat dan Angkat Beban', 'Olahraga intensif untuk menurunkan berat badan dan mengurangi lemak tubuh.');
+INSERT INTO `rekomendasi_olahraga` (`id_rekomendasi_olahraga`, `id_kategori_bmi`, `olahraga`, `deskripsi`, `foto`) VALUES
+(1, 1, 'Latihan Kekuatan (Strength Training)', 'Olahraga untuk menambah massa otot dan berat badan.', ''),
+(2, 2, 'Jogging Ringan dan Latihan Kekuatan', 'Meningkatkan nafsu makan dan memperbaiki berat badan dengan olahraga teratur.', ''),
+(3, 3, 'Lari, Sepeda, dan Yoga', 'Aktivitas yang membantu menambah berat badan ringan dan meningkatkan kebugaran tubuh.', ''),
+(4, 4, 'Lari, Bersepeda, dan Senam Aerobik', 'Olahraga dengan intensitas sedang untuk menjaga berat badan tetap normal.', '674433abb26ae_1732522923_download.jpeg'),
+(5, 5, 'Berenang, Jalan Cepat', 'Olahraga yang membakar kalori tanpa meningkatkan massa otot secara berlebihan.', ''),
+(6, 6, 'Yoga dan Pilates', 'Mengurangi stres dan menjaga keseimbangan tubuh dengan aktivitas yang lebih rendah kalori.', ''),
+(7, 7, 'Senam Aerobik dan Lari Ringan', 'Membantu mengurangi berat badan dengan aktivitas intensitas tinggi.', ''),
+(8, 8, 'Latihan Kardio Berat dan Angkat Beban', 'Olahraga intensif untuk menurunkan berat badan dan mengurangi lemak tubuh.', '');
 
 -- --------------------------------------------------------
 
@@ -243,13 +290,13 @@ ALTER TABLE `berat_tinggi_badan`
 -- AUTO_INCREMENT untuk tabel `kategori_bmi`
 --
 ALTER TABLE `kategori_bmi`
-  MODIFY `id_kategori_bmi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_kategori_bmi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
@@ -261,13 +308,13 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT untuk tabel `rekomendasi_makanan`
 --
 ALTER TABLE `rekomendasi_makanan`
-  MODIFY `id_rekomendasi_makanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_rekomendasi_makanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekomendasi_olahraga`
 --
 ALTER TABLE `rekomendasi_olahraga`
-  MODIFY `id_rekomendasi_olahraga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_rekomendasi_olahraga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
