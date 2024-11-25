@@ -14,8 +14,8 @@
                     </a>
                 </li>
                 <li class="nav-item"> 
-                    <a href="berat_tinggi_badan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/berat_tinggi_badan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-calculator"></i>
-                        <p>Kalkulasi</p>
+                    <a href="berat_tinggi_badan.php" class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/monitoring_kebugaran_dan_nutrisi/berat_tinggi_badan.php') ? 'active' : ''; ?>"> <i class="nav-icon fas fa-fw fa-weight"></i>
+                        <p>Berat Tinggi Badan</p>
                     </a> 
                 </li>
                 <li class="nav-item"> 

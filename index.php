@@ -6,11 +6,10 @@
         exit;
     }
 
-    // $jml_antrian = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM antrian"));
-    // $jml_pemeriksaan = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM pemeriksaan"));
-    // $jml_anak = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM anak"));
-    // $jml_user = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM user"));
-    // $jml_dokter = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM dokter"));
+    $jml_pelanggan = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM pelanggan"));
+    $jml_kategori_bmi = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM kategori_bmi"));
+    $jml_rekomendasi_makanan = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM rekomendasi_makanan"));
+    $jml_rekomendasi_olahraga = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM rekomendasi_olahraga"));
 ?>
 
 <!DOCTYPE html>
@@ -47,39 +46,39 @@
                 <div class="container-fluid"> <!-- Info boxes -->
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-3">
-                            <a href="user.php" class="nav-link">
+                            <a href="pelanggan.php" class="nav-link">
                                 <div class="info-box"> <span class="info-box-icon text-bg-warning shadow-sm"> <i class="fas fa-fw fa-users text-white"></i> </span>
                                     <div class="info-box-content"> <span class="info-box-text">Jumlah Pelanggan</span>
-                                        <span class="info-box-number"><?= "0"; ?></span>
+                                        <span class="info-box-number"><?= $jml_pelanggan; ?></span>
                                     </div> 
                                     <!-- /.info-box-content -->
                                 </div> <!-- /.info-box -->
                             </a>
                         </div> <!-- /.col -->
                         <div class="col-12 col-sm-6 col-md-3">
-                            <a href="dokter.php" class="nav-link">
+                            <a href="kategori_bmi.php" class="nav-link">
                                 <div class="info-box"> <span class="info-box-icon text-bg-danger shadow-sm"> <i class="fas fa-fw fa-child"></i> </span>
                                     <div class="info-box-content"> <span class="info-box-text">Jumlah Kategori BMI</span> 
-                                        <span class="info-box-number"><?= "0"; ?></span> 
+                                        <span class="info-box-number"><?= $jml_kategori_bmi; ?></span> 
                                     </div> 
                                     <!-- /.info-box-content -->
                                 </div> <!-- /.info-box -->
                             </a>
                         </div>
                         <div class="col-12 col-sm-6 col-md-3">
-                            <a href="pemeriksaan.php" class="nav-link">
+                            <a href="rekomendasi_makanan.php" class="nav-link">
                                 <div class="info-box"> <span class="info-box-icon text-bg-success shadow-sm"> <i class="fas fa-fw fa-carrot"></i> </span>
                                     <div class="info-box-content"> <span class="info-box-text">Rekomendasi Makanan</span> 
-                                        <span class="info-box-number"><?= "0"; ?></span> 
+                                        <span class="info-box-number"><?= $jml_rekomendasi_makanan; ?></span> 
                                     </div>
                                 </div> <!-- /.info-box -->
                             </a>
                         </div> <!-- /.col -->
                         <div class="col-12 col-sm-6 col-md-3">
-                            <a href="anak.php" class="nav-link">
+                            <a href="rekomendasi_olahraga.php" class="nav-link">
                                 <div class="info-box"> <span class="info-box-icon text-bg-primary shadow-sm"> <i class="fas fa-fw fa-dumbbell"></i> </span>
                                     <div class="info-box-content"> <span class="info-box-text">Rekomendasi Olahraga</span> 
-                                        <span class="info-box-number"><?= "0"; ?></span> 
+                                        <span class="info-box-number"><?= $jml_rekomendasi_olahraga; ?></span> 
                                     </div>
                                 </div>
                             </a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Nov 2024 pada 09.41
+-- Waktu pembuatan: 25 Nov 2024 pada 11.03
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -29,11 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `berat_tinggi_badan` (
   `id_berat_tinggi_badan` int(11) NOT NULL,
+  `id_pelanggan` int(11) NOT NULL,
   `berat_badan` float NOT NULL,
   `tinggi_badan` float NOT NULL,
-  `id_pelanggan` int(11) NOT NULL,
-  `tanggal_hitung` datetime NOT NULL
+  `hasil_bmi` float DEFAULT NULL,
+  `tanggal_dibuat` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `berat_tinggi_badan`
+--
+
+INSERT INTO `berat_tinggi_badan` (`id_berat_tinggi_badan`, `id_pelanggan`, `berat_badan`, `tinggi_badan`, `hasil_bmi`, `tanggal_dibuat`) VALUES
+(2, 3, 55, 160, 21.4844, '2024-11-25 16:44:16');
 
 -- --------------------------------------------------------
 
@@ -140,7 +148,28 @@ INSERT INTO `log` (`id_log`, `isi_log`, `tgl_log`, `id_user`) VALUES
 (138, 'Pelanggan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 08:40:20', 1),
 (139, 'Pelanggan Andre berhasil diubah!', '2024-11-25 08:40:32', 1),
 (140, 'Pelanggan Andre berhasil dihapus!', '2024-11-25 08:40:37', 1),
-(141, 'Pelanggan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 08:41:08', 1);
+(141, 'Pelanggan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 08:41:08', 1),
+(142, 'Berat Tinggi Badan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 09:25:30', 1),
+(143, 'Berat Tinggi Badan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 09:28:39', 1),
+(144, 'Berat Tinggi Badan Andri Firman Saputra berhasil diubah!', '2024-11-25 09:42:10', 1),
+(145, 'Berat Tinggi Badan Andri Firman Saputra berhasil diubah!', '2024-11-25 09:42:21', 1),
+(146, 'Berat Tinggi Badan Andri Firman Saputra berhasil dihapus!', '2024-11-25 09:44:09', 1),
+(147, 'Berat Tinggi Badan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 09:44:16', 1),
+(148, 'Rekomendasi Makanan Kentang Rebus dan Telur berhasil diubah!', '2024-11-25 09:46:25', 1),
+(149, 'Rekomendasi Makanan Roti Gandum dan Susu berhasil diubah!', '2024-11-25 09:46:43', 1),
+(150, 'Rekomendasi Makanan Buah-buahan, Sayuran, dan Ikan berhasil diubah!', '2024-11-25 09:47:11', 1),
+(151, 'Rekomendasi Makanan Salad Sayur dan Protein Rendah Lemak berhasil diubah!', '2024-11-25 09:47:36', 1),
+(152, 'Rekomendasi Makanan Oatmeal dan Ikan Panggang berhasil diubah!', '2024-11-25 09:48:43', 1),
+(153, 'Rekomendasi Makanan Sup Sayur Tanpa Minyak berhasil diubah!', '2024-11-25 09:49:07', 1),
+(154, 'Rekomendasi Makanan Sayuran Kukus dan Protein Nabati berhasil diubah!', '2024-11-25 09:49:42', 1),
+(155, 'Rekomendasi Olahraga Latihan Kekuatan (Strength Training) berhasil diubah!', '2024-11-25 09:50:07', 1),
+(156, 'Rekomendasi Olahraga Jogging Ringan dan Latihan Kekuatan berhasil diubah!', '2024-11-25 09:51:03', 1),
+(157, 'Rekomendasi Olahraga Lari, Sepeda, dan Yoga berhasil diubah!', '2024-11-25 09:51:46', 1),
+(158, 'Rekomendasi Olahraga Berenang, Jalan Cepat berhasil diubah!', '2024-11-25 09:52:12', 1),
+(159, 'Rekomendasi Olahraga Yoga dan Pilates berhasil diubah!', '2024-11-25 09:52:46', 1),
+(160, 'Rekomendasi Olahraga Lari, Sepeda, dan Yoga berhasil diubah!', '2024-11-25 09:53:28', 1),
+(161, 'Rekomendasi Olahraga Senam Aerobik dan Lari Ringan berhasil diubah!', '2024-11-25 09:54:04', 1),
+(162, 'Rekomendasi Olahraga Latihan Kardio Berat dan Angkat Beban berhasil diubah!', '2024-11-25 09:54:55', 1);
 
 -- --------------------------------------------------------
 
@@ -184,14 +213,13 @@ CREATE TABLE `rekomendasi_makanan` (
 
 INSERT INTO `rekomendasi_makanan` (`id_rekomendasi_makanan`, `id_kategori_bmi`, `makanan`, `deskripsi`, `foto`) VALUES
 (1, 1, 'Nasi, Ayam, dan Sayuran', 'Makanan tinggi kalori dan protein untuk menambah berat badan.', '674432bfa9057_1732522687_download (1).jpeg'),
-(2, 2, 'Kentang Rebus dan Telur', 'Kaya protein dan karbohidrat kompleks untuk memperbaiki berat badan.', ''),
-(3, 3, 'Roti Gandum dan Susu', 'Cocok untuk menambah berat badan ringan dengan asupan nutrisi seimbang.', ''),
-(4, 4, 'Buah-buahan, Sayuran, dan Ikan', 'Pola makan sehat untuk mempertahankan berat badan normal.', ''),
-(5, 5, 'Salad Sayur dan Protein Rendah Lemak', 'Mengontrol berat badan dengan asupan kalori moderat.', ''),
-(6, 6, 'Oatmeal dan Ikan Panggang', 'Mengurangi asupan kalori dengan tetap memenuhi kebutuhan nutrisi.', ''),
-(7, 7, 'Sup Sayur Tanpa Minyak', 'Rendah kalori untuk menurunkan berat badan lebih efektif.', ''),
-(8, 8, 'Sayuran Kukus dan Protein Nabati', 'Makanan sangat rendah kalori untuk kategori obesitas berat.', ''),
-(10, 0, 'asd123', 'asd123', '');
+(2, 2, 'Kentang Rebus dan Telur', 'Kaya protein dan karbohidrat kompleks untuk memperbaiki berat badan.', '674447716949c_1732527985_1.jpeg'),
+(3, 3, 'Roti Gandum dan Susu', 'Cocok untuk menambah berat badan ringan dengan asupan nutrisi seimbang.', '674447838ff87_1732528003_2.jpeg'),
+(4, 4, 'Buah-buahan, Sayuran, dan Ikan', 'Pola makan sehat untuk mempertahankan berat badan normal.', '6744479fb9fb2_1732528031_403059_5-11-2020_11-55-41.jpeg'),
+(5, 5, 'Salad Sayur dan Protein Rendah Lemak', 'Mengontrol berat badan dengan asupan kalori moderat.', '674447b8d864f_1732528056_resep-salad-sayur-untuk-diet-yang-nikmat-dan-mudah-dibuat.jpg'),
+(6, 6, 'Oatmeal dan Ikan Panggang', 'Mengurangi asupan kalori dengan tetap memenuhi kebutuhan nutrisi.', '674447fbeb931_1732528123_manfaat-oatmeal-untuk-kesehatan.jpg'),
+(7, 7, 'Sup Sayur Tanpa Minyak', 'Rendah kalori untuk menurunkan berat badan lebih efektif.', '67444813a4e86_1732528147_images.jpeg'),
+(8, 8, 'Sayuran Kukus dan Protein Nabati', 'Makanan sangat rendah kalori untuk kategori obesitas berat.', '6744483634892_1732528182_4-Makanan-Sumber-Protein-Nabati-Yang-Baik-Untuk-Tubuh-1.jpg');
 
 -- --------------------------------------------------------
 
@@ -212,14 +240,14 @@ CREATE TABLE `rekomendasi_olahraga` (
 --
 
 INSERT INTO `rekomendasi_olahraga` (`id_rekomendasi_olahraga`, `id_kategori_bmi`, `olahraga`, `deskripsi`, `foto`) VALUES
-(1, 1, 'Latihan Kekuatan (Strength Training)', 'Olahraga untuk menambah massa otot dan berat badan.', ''),
-(2, 2, 'Jogging Ringan dan Latihan Kekuatan', 'Meningkatkan nafsu makan dan memperbaiki berat badan dengan olahraga teratur.', ''),
-(3, 3, 'Lari, Sepeda, dan Yoga', 'Aktivitas yang membantu menambah berat badan ringan dan meningkatkan kebugaran tubuh.', ''),
+(1, 1, 'Latihan Kekuatan (Strength Training)', 'Olahraga untuk menambah massa otot dan berat badan.', '6744484f1cbb7_1732528207_apa-itu-strength-training-pengertian-jenis-jenis-dan-manfaatnya-medium.jpeg'),
+(2, 2, 'Jogging Ringan dan Latihan Kekuatan', 'Meningkatkan nafsu makan dan memperbaiki berat badan dengan olahraga teratur.', '6744488717569_1732528263_Screenshot 2024-11-25 165049.png'),
+(3, 3, 'Lari, Sepeda, dan Yoga', 'Aktivitas yang membantu menambah berat badan ringan dan meningkatkan kebugaran tubuh.', '67444918982e4_1732528408_Screenshot 2024-11-25 165319.png'),
 (4, 4, 'Lari, Bersepeda, dan Senam Aerobik', 'Olahraga dengan intensitas sedang untuk menjaga berat badan tetap normal.', '674433abb26ae_1732522923_download.jpeg'),
-(5, 5, 'Berenang, Jalan Cepat', 'Olahraga yang membakar kalori tanpa meningkatkan massa otot secara berlebihan.', ''),
-(6, 6, 'Yoga dan Pilates', 'Mengurangi stres dan menjaga keseimbangan tubuh dengan aktivitas yang lebih rendah kalori.', ''),
-(7, 7, 'Senam Aerobik dan Lari Ringan', 'Membantu mengurangi berat badan dengan aktivitas intensitas tinggi.', ''),
-(8, 8, 'Latihan Kardio Berat dan Angkat Beban', 'Olahraga intensif untuk menurunkan berat badan dan mengurangi lemak tubuh.', '');
+(5, 5, 'Berenang, Jalan Cepat', 'Olahraga yang membakar kalori tanpa meningkatkan massa otot secara berlebihan.', '674448cc5a0f1_1732528332_lima-manfaat-berenang-bagi-keseh-20231116030025.jpg'),
+(6, 6, 'Yoga dan Pilates', 'Mengurangi stres dan menjaga keseimbangan tubuh dengan aktivitas yang lebih rendah kalori.', '674448ee5b5af_1732528366_images (1).jpeg'),
+(7, 7, 'Senam Aerobik dan Lari Ringan', 'Membantu mengurangi berat badan dengan aktivitas intensitas tinggi.', '6744493c58fd8_1732528444_senam-aerobic.jpg'),
+(8, 8, 'Latihan Kardio Berat dan Angkat Beban', 'Olahraga intensif untuk menurunkan berat badan dan mengurangi lemak tubuh.', '6744496f0c7f1_1732528495_images (2).jpeg');
 
 -- --------------------------------------------------------
 
@@ -302,7 +330,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `berat_tinggi_badan`
 --
 ALTER TABLE `berat_tinggi_badan`
-  MODIFY `id_berat_tinggi_badan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_berat_tinggi_badan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori_bmi`
@@ -314,7 +342,7 @@ ALTER TABLE `kategori_bmi`
 -- AUTO_INCREMENT untuk tabel `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
