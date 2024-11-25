@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Nov 2024 pada 09.22
+-- Waktu pembuatan: 25 Nov 2024 pada 09.41
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -131,7 +131,16 @@ INSERT INTO `log` (`id_log`, `isi_log`, `tgl_log`, `id_user`) VALUES
 (129, 'Kategori BMI lele berhasil dihapus!', '2024-11-25 08:20:58', 1),
 (130, 'Rekomendasi Olahraga lari berhasil ditambahkan!', '2024-11-25 08:21:11', 1),
 (131, 'Kategori BMI lari berhasil dihapus!', '2024-11-25 08:21:44', 1),
-(132, 'Rekomendasi Olahraga Lari, Bersepeda, dan Senam Aerobik berhasil diubah!', '2024-11-25 08:22:03', 1);
+(132, 'Rekomendasi Olahraga Lari, Bersepeda, dan Senam Aerobik berhasil diubah!', '2024-11-25 08:22:03', 1),
+(133, 'Pelanggan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 08:32:12', 1),
+(134, 'Pelanggan Andri Firman Saputra123 gagal diubah!', '2024-11-25 08:37:25', 1),
+(135, 'Pelanggan Andri Firman Saputra123 berhasil diubah!', '2024-11-25 08:38:10', 1),
+(136, 'Pelanggan  berhasil dihapus!', '2024-11-25 08:39:39', 1),
+(137, 'Pelanggan  berhasil dihapus!', '2024-11-25 08:40:01', 1),
+(138, 'Pelanggan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 08:40:20', 1),
+(139, 'Pelanggan Andre berhasil diubah!', '2024-11-25 08:40:32', 1),
+(140, 'Pelanggan Andre berhasil dihapus!', '2024-11-25 08:40:37', 1),
+(141, 'Pelanggan Andri Firman Saputra berhasil ditambahkan!', '2024-11-25 08:41:08', 1);
 
 -- --------------------------------------------------------
 
@@ -143,8 +152,17 @@ CREATE TABLE `pelanggan` (
   `id_pelanggan` int(11) NOT NULL,
   `nama_lengkap` varchar(100) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `no_telepon` varchar(20) NOT NULL
+  `no_telepon` varchar(20) NOT NULL,
+  `foto` text DEFAULT NULL,
+  `tanggal_dibuat` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`id_pelanggan`, `nama_lengkap`, `tanggal_lahir`, `no_telepon`, `foto`, `tanggal_dibuat`) VALUES
+(3, 'Andri Firman Saputra', '2002-01-29', '087808675313', '67443824a37e8_1732524068_1675754467574.jpg', '2024-11-25 15:41:08');
 
 -- --------------------------------------------------------
 
@@ -296,13 +314,13 @@ ALTER TABLE `kategori_bmi`
 -- AUTO_INCREMENT untuk tabel `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekomendasi_makanan`
