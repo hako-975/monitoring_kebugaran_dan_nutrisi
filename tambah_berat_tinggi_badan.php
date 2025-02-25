@@ -109,11 +109,11 @@
                                         </div>
                                         <div class="mb-3"> 
                                             <label for="berat_badan" class="form-label">Berat Badan (kg)</label>
-                                            <input type="number" step=".01" class="form-control" id="berat_badan" name="berat_badan" required>
+                                            <input type="number" step=".01" class="form-control" id="berat_badan" name="berat_badan" required value="">
                                         </div>
                                         <div class="mb-3"> 
                                             <label for="tinggi_badan" class="form-label">Tinggi Badan (cm)</label>
-                                            <input type="number" step=".01" class="form-control" id="tinggi_badan" name="tinggi_badan" required>
+                                            <input type="number" step=".01" class="form-control" id="tinggi_badan" name="tinggi_badan" required value="">
                                         </div>
                                     </div> 
                                     <div class="card-footer pt-3">
@@ -129,6 +129,37 @@
         <?php include_once 'include/footer.php'; ?>
     </div> <!--end::App Wrapper--> 
     <?php include_once 'include/script.php'; ?>
+
+    <script>
+    $(document).ready(function() {
+        // Fungsi untuk fetch data dari server
+        function fetchData() {
+            $.ajax({
+                url: 'get_temp_berat_tinggi.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    $('#berat_badan').val(data.berat || '');
+                    $('#tinggi_badan').val(data.tinggi || '');
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', error);
+                    Swal.fire('Error', 'Failed to fetch data: ' + error, 'error');
+                }
+            });
+        }
+
+        // Panggil fetch pertama kali saat halaman dimuat
+        fetchData();
+
+        // Jalankan setiap 5 detik (5000 ms)
+        setInterval(fetchData, 5000);
+    });
+    </script>
+
+
 </body><!--end::Body-->
 
 </html>
+
+
