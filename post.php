@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost:3306";
-$dbname = "monitork_1";
-$username = "monitork_user";
-$password = "B9ek2t6!7";
+$dbname = "hakc2743_monitoring_kebugaran_dan_nutrisi";
+$username = "hakc2743_localhost";
+$password = "md615GPkAtJ798";
 
 $api_key_value = "12345";
 $api_key = $berat_badan = $tinggi_badan = "";
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insert Temperature and Humidity data
-        $sql_temp = "INSERT INTO temp_berat_tinggi (berat, tinggi) VALUES ('$berat_badan', '$tinggi_badan')";
+        $sql_temp = "INSERT INTO temp_berat_tinggi_badan (berat_badan, tinggi_badan) VALUES ('$berat_badan', '$tinggi_badan')";
         if ($conn->query($sql_temp) === TRUE) {
             echo "Data temp berat dan tinggi berhasil ditambahkan. ";
         } else {

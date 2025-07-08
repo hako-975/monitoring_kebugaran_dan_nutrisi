@@ -129,18 +129,17 @@
         <?php include_once 'include/footer.php'; ?>
     </div> <!--end::App Wrapper--> 
     <?php include_once 'include/script.php'; ?>
-
+    
     <script>
     $(document).ready(function() {
-        // Fungsi untuk fetch data dari server
         function fetchData() {
             $.ajax({
-                url: 'get_temp_berat_tinggi.php',
+                url: 'get_temp_berat_tinggi_badan_for_add.php?t=' + new Date().getTime(), // ⬅️ Tambah ini
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    $('#berat_badan').val(data.berat || '');
-                    $('#tinggi_badan').val(data.tinggi || '');
+                    $('#berat_badan').val(parseFloat(data.berat_badan).toFixed(2) || '');
+                    $('#tinggi_badan').val(parseFloat(data.tinggi_badan).toFixed(2) || '');
                 },
                 error: function(xhr, status, error) {
                     console.error('AJAX Error:', error);
@@ -148,13 +147,11 @@
                 }
             });
         }
-
-        // Panggil fetch pertama kali saat halaman dimuat
+    
         fetchData();
-
-        // Jalankan setiap 5 detik (5000 ms)
         setInterval(fetchData, 5000);
     });
+
     </script>
 
 

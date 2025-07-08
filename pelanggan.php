@@ -65,7 +65,7 @@
                                                 <td class="align-middle"><?= $dp['nama_lengkap']; ?></td>
                                                 <td class="align-middle"><?= $dp['tanggal_lahir']; ?></td>
                                                 <td class="align-middle"><?= $dp['no_telepon']; ?></td>
-                                                <td class="align-middle"><img style="max-width: 200px; max-height: 200px" src="assets/img/pelanggan/<?= $dp['foto']; ?>" alt="<?= $dp['foto']; ?>"></td>
+                                                <td class="align-middle"><img style="max-width: 200px; max-height: 200px; text-align: center" src="assets/img/profiles/<?= $dp['foto']; ?>" alt="<?= $dp['foto']; ?>"></td>
                                                 <td class="align-middle"><?= $dp['tanggal_dibuat']; ?></td>
                                                 <td class="text-center align-middle">
                                                     <a href="ubah_pelanggan.php?id_pelanggan=<?= $dp['id_pelanggan']; ?>" class="m-1 btn btn-success"><i class="fas fa-fw fa-edit"></i> Ubah</a>

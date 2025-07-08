@@ -79,7 +79,7 @@
 
                 if ($foto != '') {
                     $file_tmp = $_FILES['foto']['tmp_name'];     
-                    move_uploaded_file($file_tmp, 'assets/img/pelanggan/' . $foto);
+                    move_uploaded_file($file_tmp, 'assets/img/profiles/' . $foto);
                 }
 
                 echo "

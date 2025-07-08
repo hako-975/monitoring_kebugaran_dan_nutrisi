@@ -3,9 +3,9 @@
 	date_default_timezone_set("Asia/Jakarta");
 	
 	$host = 'localhost';
-	$user = 'root';
-	$pass = '';
-	$database = 'monitoring_kebugaran_dan_nutrisi';
+	$user = 'hakc2743_localhost';
+	$pass = 'md615GPkAtJ798';
+	$database = 'hakc2743_monitoring_kebugaran_dan_nutrisi';
 
 	$conn = mysqli_connect($host, $user, $pass, $database);
 

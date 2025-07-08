@@ -94,7 +94,7 @@
                                                     <img style="max-width: 200px; max-height: 200px" src="assets/img/olahraga/<?= $rekomendasi_olahraga['foto']; ?>" alt="<?= $rekomendasi_olahraga['olahraga']; ?>"><br>
                                                     <?= $rekomendasi_olahraga['olahraga']; ?>
                                                 </td>
-                                                <td class="text-center align-middle"><?= $dbtb['tanggal_dibuat']; ?></td>
+                                                <td class="text-center align-middle"><?= date('d-m-Y', strtotime($dbtb['tanggal_dibuat'])); ?></td>
                                                 <td class="text-center align-middle">
                                                     <a href="ubah_berat_tinggi_badan.php?id_berat_tinggi_badan=<?= $dbtb['id_berat_tinggi_badan']; ?>" class="m-1 btn btn-success"><i class="fas fa-fw fa-edit"></i> Ubah</a>
                                                     <a href="hapus_berat_tinggi_badan.php?id_berat_tinggi_badan=<?= $dbtb['id_berat_tinggi_badan']; ?>" data-nama="<?= $dbtb['nama_lengkap']; ?>" class="m-1 btn btn-danger btn-delete"><i class="fas fa-fw fa-trash"></i> Hapus</a>

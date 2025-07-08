@@ -15,7 +15,7 @@
     $nama_lengkap = $data_pelanggan['nama_lengkap'];
 
     $foto = $data_pelanggan['foto'];
-    $image_path = 'assets/img/pelanggan/' . $foto;
+    $image_path = 'assets/img/profiles/' . $foto;
 
 	$delete_pelanggan = mysqli_query($conn, "DELETE FROM pelanggan WHERE id_pelanggan = '$id_pelanggan'");
 

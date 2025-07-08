@@ -88,7 +88,7 @@
 
                 if ($foto_new != '') {
                     $file_tmp = $_FILES['foto']['tmp_name'];     
-                    move_uploaded_file($file_tmp, 'assets/img/pelanggan/' . $foto);
+                    move_uploaded_file($file_tmp, 'assets/img/profiles/' . $foto);
                 }
 
                 echo "
@@ -186,7 +186,7 @@
                                     <h5 class="form-label">Preview Foto</h5>
                                     <div class="row justify-content-between">
                                         <div class="col">
-                                            <img id="preview-img" class="img-fluid rounded-3" src="assets/img/pelanggan/<?= $data_pelanggan['foto']; ?>" alt="<?= $data_pelanggan['foto']; ?>">
+                                            <img id="preview-img" class="img-fluid rounded-3" src="assets/img/profiles/<?= $data_pelanggan['foto']; ?>" alt="<?= $data_pelanggan['foto']; ?>">
                                         </div>
                                     </div>  
                                 </div>
